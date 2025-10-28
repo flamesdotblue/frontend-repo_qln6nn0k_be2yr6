@@ -1,28 +1,40 @@
-import { useState } from 'react'
+import { useEffect } from 'react';
+import Hero from './components/Hero';
+import About from './components/About';
+import Showcase from './components/Showcase';
+import Contact from './components/Contact';
 
-function App() {
-  const [count, setCount] = useState(0)
+export default function App() {
+  useEffect(() => {
+    document.title = 'Dr. Alvaro Cintas — Portfolio';
+  }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
-        </div>
-      </div>
-    </div>
-  )
-}
+    <div className="min-h-screen bg-[#0A0B0F] font-sans antialiased">
+      {/* Top nav */}
+      <header className="fixed inset-x-0 top-0 z-50 mx-auto flex max-w-7xl items-center justify-between rounded-b-2xl bg-[#0A0B0F]/60 px-6 py-4 backdrop-blur-xl ring-1 ring-white/10">
+        <a href="#home" className="text-sm font-semibold text-white/90">AC</a>
+        <nav className="hidden gap-6 text-sm text-white/70 md:flex">
+          <a href="#about" className="hover:text-white">About</a>
+          <a href="#projects" className="hover:text-white">Projects</a>
+          <a href="#content" className="hover:text-white">Content</a>
+          <a href="#contact" className="hover:text-white">Contact</a>
+        </nav>
+        <a href="#contact" className="rounded-xl bg-white px-3 py-1.5 text-xs font-semibold text-black shadow-lg shadow-blue-500/10 transition hover:-translate-y-0.5 hover:shadow-blue-500/20">
+          Let’s Collaborate
+        </a>
+      </header>
 
-export default App
+      <main>
+        <Hero />
+        <About />
+        <Showcase />
+        <Contact />
+      </main>
+
+      <footer className="border-t border-white/10 bg-[#07080C] py-6 text-center text-xs text-white/50">
+        © {new Date().getFullYear()} Dr. Alvaro Cintas. All rights reserved.
+      </footer>
+    </div>
+  );
+}
