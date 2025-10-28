@@ -22,8 +22,9 @@ export default function About() {
         {/* Profile card */}
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="md:col-span-2 rounded-2xl bg-white/10 p-6 backdrop-blur-xl ring-1 ring-white/10">
           <div className="flex items-center gap-4">
-            <div className="h-16 w-16 overflow-hidden rounded-xl ring-1 ring-white/20">
-              <img src="https://images.unsplash.com/photo-1527980965255-d3b416303d12?q=80&w=400&auto=format&fit=crop" alt="Dr. Alvaro Cintas" className="h-full w-full object-cover" />
+            {/* Removed image per request; using monogram avatar for balance */}
+            <div className="flex h-16 w-16 items-center justify-center rounded-xl bg-gradient-to-br from-blue-500/30 to-fuchsia-500/30 ring-1 ring-white/20">
+              <span className="text-sm font-semibold text-white/90">AC</span>
             </div>
             <div>
               <h3 className="text-lg font-semibold">Dr. Alvaro Cintas</h3>

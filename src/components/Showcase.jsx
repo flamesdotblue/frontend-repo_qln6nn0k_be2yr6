@@ -22,18 +22,19 @@ const projectItems = [
   },
 ];
 
+// Updated with provided YouTube links
 const contentItems = [
   {
-    title: 'Narrative Systems in React',
-    video: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+    title: 'Featured Video 1',
+    video: 'https://www.youtube.com/embed/1Bqwr2OBPsQ',
   },
   {
-    title: 'Scaling Creativity with Node.js',
-    video: 'https://www.youtube.com/embed/oHg5SJYRHA0',
+    title: 'Featured Video 2',
+    video: 'https://www.youtube.com/embed/XARr6RnBOc8',
   },
   {
-    title: 'Designing for Delight: Micro‑Interactions',
-    video: 'https://www.youtube.com/embed/ysz5S6PUM-U',
+    title: 'Featured Video 3',
+    video: 'https://www.youtube.com/embed/YfdEC-P-e34',
   },
 ];
 
@@ -83,7 +84,7 @@ export default function Showcase() {
           <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
             {contentItems.map((c, i) => (
               <motion.div
-                key={c.title}
+                key={c.video}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
