@@ -1,12 +1,6 @@
 import React from 'react';
 import Spline from '@splinetool/react-spline';
 
-// Goal: visually blend the robot with the hero background
-// Strategy:
-// - Keep scene interactive (no overlays intercepting pointer events)
-// - Use transparent canvas and soft radial mask to fade edges
-// - Add subtle color wash using mix-blend on a pointer-events-none layer
-
 const Hero = () => {
   return (
     <section className="relative overflow-hidden">
@@ -59,7 +53,7 @@ const Hero = () => {
 
           {/* Container with soft radial mask to "erase" hard scene edges */}
           <div
-            className="absolute inset-0 rounded-2xl overflow-hidden"
+            className="spline-hero absolute inset-0 rounded-2xl overflow-hidden"
             style={{
               WebkitMaskImage:
                 'radial-gradient(70% 70% at 60% 50%, rgba(0,0,0,1) 0%, rgba(0,0,0,0.85) 60%, rgba(0,0,0,0) 100%)',

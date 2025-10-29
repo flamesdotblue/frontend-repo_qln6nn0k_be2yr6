@@ -44,3 +44,8 @@
     --tw-exit-translate-y: initial;
   }
 }
+
+/* Force Spline canvas to be transparent inside hero container */
+.spline-hero canvas {
+  background-color: transparent !important;
+}
