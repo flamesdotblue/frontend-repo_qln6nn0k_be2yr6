@@ -114,7 +114,7 @@ export default function Hero() {
         <div className="relative h-[46vh] md:h-[70vh]">
           <div className="absolute inset-0">
             <Spline
-              scene="https://prod.spline.design/FduaNp3csZktbOi3/scene.splinecode"
+              scene="https://prod.spline.design/OG17yM2eUIs8MUmA/scene.splinecode"
               style={{ width: '100%', height: '100%' }}
             />
           </div>
