@@ -1,71 +1,47 @@
-import { motion } from 'framer-motion';
-import { Code, User } from 'lucide-react';
+import React from 'react';
 
-const tools = [
-  'React',
-  'Next.js',
-  'Node.js',
-  'TypeScript',
-  'Python',
-  'FastAPI',
-  'PostgreSQL',
-  'MongoDB',
-  'Tailwind',
-  'Framer Motion',
-];
-
-export default function About() {
+const About = () => {
   return (
-    <section id="about" className="relative w-full bg-[#0A0B0F] py-24 text-white">
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(34,197,94,0.12),transparent_50%)]" />
-      <div className="relative mx-auto grid max-w-7xl grid-cols-1 gap-10 px-6 md:grid-cols-5">
-        {/* Profile card */}
-        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="md:col-span-2 rounded-2xl bg-white/10 p-6 backdrop-blur-xl ring-1 ring-white/10">
-          <div className="flex items-center gap-4">
-            {/* Removed image per request; using monogram avatar for balance */}
-            <div className="flex h-16 w-16 items-center justify-center rounded-xl bg-gradient-to-br from-blue-500/30 to-fuchsia-500/30 ring-1 ring-white/20">
-              <span className="text-sm font-semibold text-white/90">AC</span>
-            </div>
-            <div>
-              <h3 className="text-lg font-semibold">Dr. Alvaro Cintas</h3>
-              <p className="text-sm text-white/70">Content Creator • Full‑Stack Developer • Tech Educator</p>
-            </div>
+    <section id="about" className="relative">
+      <div className="mx-auto max-w-7xl px-4 md:px-6 py-16 md:py-24 grid md:grid-cols-3 gap-10 items-start">
+        <div className="md:col-span-1">
+          <div className="h-16 w-16 rounded-xl bg-white/10 grid place-items-center text-xl font-black tracking-tight">
+            AC
           </div>
-          <p className="mt-5 text-sm leading-relaxed text-white/80">
-            I craft premium digital experiences that merge narrative, interaction, and performance. From cinematic web apps to studio‑grade content, I build systems that feel alive.
+          <h2 className="mt-6 text-2xl md:text-3xl font-bold">About</h2>
+          <p className="mt-2 text-zinc-400 text-sm">Design systems • Human-computer interaction • Robotics</p>
+        </div>
+
+        <div className="md:col-span-2 space-y-6">
+          <p className="text-zinc-300 leading-relaxed">
+            I craft elegant, high-performance interfaces that bridge research and production. My
+            work spans real-time 3D visualizations, robotics UX, and interactive learning tools —
+            always centered on clarity, motion, and measurable outcomes.
           </p>
-          <div className="mt-6 flex items-center gap-2 text-xs text-white/60">
-            <User className="h-4 w-4" />
-            <span>Available for select collaborations</span>
+
+          <div className="grid sm:grid-cols-2 gap-4">
+            <div className="rounded-xl border border-white/10 bg-white/5 p-5">
+              <h3 className="font-semibold">Highlights</h3>
+              <ul className="mt-3 space-y-2 text-sm text-zinc-300 list-disc list-inside">
+                <li>Doctorate in HCI & Robotics</li>
+                <li>Real-time 3D experiences with Spline</li>
+                <li>Motion-first product thinking</li>
+                <li>Data-driven usability improvements</li>
+              </ul>
+            </div>
+            <div className="rounded-xl border border-white/10 bg-white/5 p-5">
+              <h3 className="font-semibold">Core Tools</h3>
+              <ul className="mt-3 flex flex-wrap gap-2 text-xs text-zinc-300">
+                {['Spline','Framer Motion','React','Python','FastAPI','ThreeJS','Figma','Notion'].map(t => (
+                  <li key={t} className="rounded-md bg-white/5 border border-white/10 px-2.5 py-1">{t}</li>
+                ))}
+              </ul>
+            </div>
           </div>
-        </motion.div>
-
-        {/* Achievements & Stack */}
-        <div className="md:col-span-3 flex flex-col gap-6">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1, duration: 0.6 }} className="rounded-2xl bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl ring-1 ring-white/10">
-            <h4 className="text-base font-semibold">Highlights</h4>
-            <ul className="mt-3 grid grid-cols-1 gap-3 text-sm text-white/75 md:grid-cols-3">
-              <li className="rounded-lg bg-white/5 p-3">10M+ views across platforms</li>
-              <li className="rounded-lg bg-white/5 p-3">Launched 30+ full‑stack products</li>
-              <li className="rounded-lg bg-white/5 p-3">Keynote speaker & mentor</li>
-            </ul>
-          </motion.div>
-
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.15, duration: 0.6 }} className="rounded-2xl bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl ring-1 ring-white/10">
-            <div className="mb-3 flex items-center gap-2">
-              <Code className="h-4 w-4 text-blue-400" />
-              <h4 className="text-base font-semibold">Core Tools</h4>
-            </div>
-            <div className="flex flex-wrap gap-2">
-              {tools.map((t) => (
-                <span key={t} className="rounded-lg bg-white/10 px-3 py-1 text-xs text-white/80 ring-1 ring-white/10">
-                  {t}
-                </span>
-              ))}
-            </div>
-          </motion.div>
         </div>
       </div>
     </section>
   );
-}
+};
+
+export default About;
